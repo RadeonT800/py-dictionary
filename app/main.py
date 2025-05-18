@@ -14,7 +14,7 @@ class Node:
 
 class Dictionary:
     def __init__(self) -> None:
-        self.__lode_factor = 2 / 3
+        self.__load_factor = 2 / 3
         self.__capacity = 8
         self.__size = 0
         self.__table = [[] for _ in range(self.__capacity)]
@@ -51,7 +51,7 @@ class Dictionary:
         return self.__size
 
     def resize_table(self) -> None:
-        if self.__size >= self.__lode_factor * self.__capacity:
+        if self.__size >= self.__load_factor * self.__capacity:
             self.__capacity *= 2
             new_table = [[] for _ in range(self.__capacity)]
             for cell in self.__table:
